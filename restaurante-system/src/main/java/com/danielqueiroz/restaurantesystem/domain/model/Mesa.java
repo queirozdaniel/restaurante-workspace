@@ -17,4 +17,7 @@ public class Mesa {
     @OneToOne
     private Pedido pedido;
 
+    @OneToOne
+    private User user;
+
 }

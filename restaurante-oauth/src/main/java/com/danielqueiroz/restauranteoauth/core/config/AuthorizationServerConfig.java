@@ -17,9 +17,11 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter{
 
-	private String oauthClientName = "myappname";
-	
-	private String oauthClientSecret = "myappsecret123";
+	@Value("${oauth.client.name}")
+	private String oauthClientName;
+
+	@Value("${oauth.client.secret}")
+	private String oauthClientSecret;
 
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;

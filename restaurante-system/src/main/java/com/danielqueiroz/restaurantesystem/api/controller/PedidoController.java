@@ -7,6 +7,7 @@ import com.danielqueiroz.restaurantesystem.api.model.mapper.PedidoInputDisassemb
 import com.danielqueiroz.restaurantesystem.domain.exception.NegocioException;
 import com.danielqueiroz.restaurantesystem.domain.model.Mesa;
 import com.danielqueiroz.restaurantesystem.domain.model.Pedido;
+import com.danielqueiroz.restaurantesystem.domain.service.MesaService;
 import com.danielqueiroz.restaurantesystem.domain.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,7 +15,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/pedidos", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -29,6 +29,8 @@ public class PedidoController {
     @Autowired
     private PedidoInputDisassembler pedidoInputDisassembler;
 
+    @Autowired
+    private MesaService mesaService;
 
     @GetMapping("/{codigo}")
     public PedidoDTO buscarPedido(@PathVariable String codigo) {
@@ -41,11 +43,9 @@ public class PedidoController {
     public PedidoDTO adicionar(@Valid @RequestBody PedidoInput pedidoInput) {
         try {
             Pedido novoPedido = pedidoInputDisassembler.toDomainObject(pedidoInput);
+            Mesa mesaRetornada = mesaService.findById(pedidoInput.getMesaIdInput().getId());
 
-            // TODO pegar usuário autenticado e colocar sua mesa
-            //novoPedido.setCliente(new Usuario());
-            novoPedido.setMesa(new Mesa());
-
+            novoPedido.setMesa(mesaRetornada);
             novoPedido = pedidoService.save(novoPedido);
 
             return pedidoDtoAssembler.toModel(novoPedido);
