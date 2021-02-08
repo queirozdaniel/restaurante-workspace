@@ -13,11 +13,19 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>restaurante-eureka-server</name>
     <description>MS Eureka Server para sistema</description>
+
     <properties>
         <java.version>11</java.version>
-        <spring-cloud.version>2020.0.1</spring-cloud.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
     </properties>
+
     <dependencies>
+
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
@@ -29,6 +37,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <dependencyManagement>
         <dependencies>
             <dependency>

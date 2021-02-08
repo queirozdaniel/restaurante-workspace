@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.2</version>
+        <version>2.3.8.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.danielqueiroz</groupId>
@@ -15,7 +15,7 @@
     <description>MS Restaurante para usuarios e administradores</description>
     <properties>
         <java.version>11</java.version>
-        <spring-cloud.version>2020.0.1</spring-cloud.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
     </properties>
     <dependencies>
         <dependency>
@@ -30,6 +30,18 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>

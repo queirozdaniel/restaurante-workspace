@@ -1,0 +1,108 @@
+version: '3'
+services:
+
+  hr-config-server:
+    build:
+      dockerfile: ./restaurante-config-server/restaurante-config-server.dockerfile
+      context: .
+    image: daniel/ws-restaurante-config-server
+    container_name: ws-restaurante-config-server
+    volumes:
+      - /tmp
+    ports:
+      - "8888:8888"
+    networks:
+      - restaurante-network
+    depends_on:
+      - "postgres2"
+
+  hr-eureka-server:
+    build:
+      dockerfile: ./restaurante-eureka-server/restaurante-eureka-server.dockerfile
+      context: .
+    image: daniel/ws-restaurante-eureka-server
+    container_name: ws-restaurante-eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - restaurante-network
+    depends_on:
+      - "hr-config-server"
+
+  hr-api-gateway-zuul:
+    build:
+      dockerfile: ./restaurante-api-gateway-zuul/restaurante-api-gateway-zuul.dockerfile
+      context: .
+    image: daniel/ws-restaurante-api-gateway-zuul
+    container_name: ws-restaurante-api-gateway-zuul
+    ports:
+      - "8765:8765"
+    networks:
+      - restaurante-network
+    depends_on:
+      - "hr-config-server"
+      - "hr-eureka-server"
+
+  hr-oauth:
+    build:
+      dockerfile: ./ws-restaurante-oauth/ws-restaurante-oauth.dockerfile
+      context: .
+    image: daniel/ws-restaurante-oauth
+    container_name: ws-restaurante-oauth
+    networks:
+      - restaurante-network
+    depends_on:
+      - "hr-config-server"
+      - "hr-api-gateway-zuul"
+
+  hr-worker:
+    build:
+      dockerfile: ./hr-worker/hr-worker.dockerfile
+      context: .
+    image: daniel/ms-spring-hr-worker
+    container_name: ms-spring-hr-worker
+    networks:
+      - restaurante-network
+    depends_on:
+      - "hr-config-server"
+      - "hr-api-gateway-zuul"
+
+  hr-user:
+    build:
+      dockerfile: ./ws-restaurante-user/ws-restaurante-user.dockerfile
+      context: .
+    image: daniel/ws-restaurante-user
+    container_name: ws-restaurante-user
+    networks:
+      - restaurante-network
+    depends_on:
+      - "hr-config-server"
+      - "hr-api-gateway-zuul"
+
+  hr-payroll:
+    build:
+      dockerfile: ./hr-payroll/hr-payroll.dockerfile
+      context: .
+    image: daniel/ms-spring-hr-payroll
+    container_name: ms-spring-hr-payroll
+    networks:
+      - restaurante-network
+    depends_on:
+      - "hr-config-server"
+      - "hr-api-gateway-zuul"
+
+  postgres:
+    image: postgres:12-alpine
+    container_name: postgres-hr-worker
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "db_hr_worker"
+      POSTGRES_PASSWORD: "1234567"
+    networks:
+      - restaurante-network
+
+
+networks:
+  restaurante-network:
+    driver: bridge

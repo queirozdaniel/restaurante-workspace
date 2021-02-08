@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/restaurante-config-server/restaurante-config-server.iml" filepath="$PROJECT_DIR$/restaurante-config-server/restaurante-config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/restaurante-eureka-server/restaurante-eureka-server.iml" filepath="$PROJECT_DIR$/restaurante-eureka-server/restaurante-eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/restaurante-system/restaurante-system.iml" filepath="$PROJECT_DIR$/restaurante-system/restaurante-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restaurante-user/restaurante-user.iml" filepath="$PROJECT_DIR$/restaurante-user/restaurante-user.iml" />
       <module fileurl="file://$PROJECT_DIR$/restaurante-workspace.iml" filepath="$PROJECT_DIR$/restaurante-workspace.iml" />
     </modules>
   </component>
