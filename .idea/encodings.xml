@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/restaurante-api-gateway-zuul/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/restaurante-config-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/restaurante-eureka-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/restaurante-oauth/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/restaurante-system/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/restaurante-user/src/main/java" charset="UTF-8" />
   </component>

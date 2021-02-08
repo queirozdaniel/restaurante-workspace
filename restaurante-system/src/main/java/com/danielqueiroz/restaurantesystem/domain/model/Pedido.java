@@ -29,7 +29,7 @@ public class Pedido {
     private OffsetDateTime dataEntraga;
     private OffsetDateTime dataCancelamento;
 
-    @ManyToOne
+    @OneToOne
     private Mesa mesa;
 
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)

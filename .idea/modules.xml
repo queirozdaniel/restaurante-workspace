@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/restaurante-api-gateway-zuul/restaurante-api-gateway-zuul.iml" filepath="$PROJECT_DIR$/restaurante-api-gateway-zuul/restaurante-api-gateway-zuul.iml" />
       <module fileurl="file://$PROJECT_DIR$/restaurante-config-server/restaurante-config-server.iml" filepath="$PROJECT_DIR$/restaurante-config-server/restaurante-config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/restaurante-eureka-server/restaurante-eureka-server.iml" filepath="$PROJECT_DIR$/restaurante-eureka-server/restaurante-eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restaurante-oauth/restaurante-oauth.iml" filepath="$PROJECT_DIR$/restaurante-oauth/restaurante-oauth.iml" />
       <module fileurl="file://$PROJECT_DIR$/restaurante-system/restaurante-system.iml" filepath="$PROJECT_DIR$/restaurante-system/restaurante-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/restaurante-user/restaurante-user.iml" filepath="$PROJECT_DIR$/restaurante-user/restaurante-user.iml" />
       <module fileurl="file://$PROJECT_DIR$/restaurante-workspace.iml" filepath="$PROJECT_DIR$/restaurante-workspace.iml" />

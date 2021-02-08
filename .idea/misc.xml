@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/restaurante-api-gateway-zuul/pom.xml" />
         <option value="$PROJECT_DIR$/restaurante-system/pom.xml" />
         <option value="$PROJECT_DIR$/restaurante-user/pom.xml" />
+        <option value="$PROJECT_DIR$/restaurante-oauth/pom.xml" />
       </list>
     </option>
   </component>

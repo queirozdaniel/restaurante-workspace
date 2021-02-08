@@ -7,11 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="restaurante-api-gateway-zuul" />
+        <module name="restaurante" />
         <module name="restaurante-user" />
         <module name="restaurante-eureka-server" />
         <module name="restaurante-config-server" />
         <module name="restaurante-system" />
-        <module name="restaurante" />
+        <module name="restaurante-oauth" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,6 +21,7 @@
       <module name="restaurante-api-gateway-zuul" target="11" />
       <module name="restaurante-config-server" target="11" />
       <module name="restaurante-eureka-server" target="11" />
+      <module name="restaurante-oauth" target="11" />
       <module name="restaurante-system" target="11" />
       <module name="restaurante-user" target="11" />
     </bytecodeTargetLevel>
@@ -31,6 +33,7 @@
       <module name="restaurante-api-gateway-zuul" options="-parameters" />
       <module name="restaurante-config-server" options="-parameters" />
       <module name="restaurante-eureka-server" options="-parameters" />
+      <module name="restaurante-oauth" options="-parameters" />
       <module name="restaurante-system" options="-parameters" />
       <module name="restaurante-user" options="-parameters" />
     </option>

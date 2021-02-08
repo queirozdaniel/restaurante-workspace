@@ -1,7 +1,12 @@
 package com.danielqueiroz.restaurantesystem.domain.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 public class Mesa {
 
@@ -9,18 +14,7 @@ public class Mesa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany
+    @OneToOne
     private Pedido pedido;
 
-    public Long getId() {
-        return id;
-    }
-
-    public Pedido getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
-    }
 }
